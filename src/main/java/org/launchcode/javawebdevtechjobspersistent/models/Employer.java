@@ -1,13 +1,21 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Employer extends AbstractEntity {
 
     @NotBlank (message = "You must enter a location!")
     private String location;
+
+    @OneToMany
+    @JoinColumn
+    private List<Job> job = new ArrayList<>();
 
     public Employer() {
     }
