@@ -1,7 +1,6 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,6 @@ public class Job extends AbstractEntity{
 
     @ManyToOne
     private Employer employer;
-//    private String skills;
 
     @NotEmpty(message = "You must choose at least one skill!")
     @ManyToMany
@@ -22,10 +20,8 @@ public class Job extends AbstractEntity{
     }
 
     public Job(Employer anEmployer) {
-//public Job(Employer anEmployer, List<Skill> someSkills) {
     super();
         this.employer = anEmployer;
-//        this.skills = someSkills;
     }
 
 
