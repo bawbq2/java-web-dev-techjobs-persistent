@@ -60,6 +60,8 @@ public class HomeController {
         Optional<Employer> result = employerRepository.findById(employerId);
         Employer newJobEmployer = result.get();
         newJob.setEmployer(newJobEmployer);
+// the following two lines of code were in the instructions to add. However, I found that when using this code the skill was added to the job twice. I removed the code
+//and the application is behaving as expected. I believe the Model is incorporating the skills objects into the newJob object.
 //        List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
 //        newJob.setSkills(skillObjs);
         jobRepository.save(newJob);
