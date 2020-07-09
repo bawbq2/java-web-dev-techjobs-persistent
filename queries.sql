@@ -1,6 +1,7 @@
 ## Part 1: Test it with SQL
 
 SHOW fields FROM job;
+columns: id (int), employer(VARCHAR), name(VARCHAR), skills(VARCHAR)
 
 ## Part 2: Test it with SQL
 
